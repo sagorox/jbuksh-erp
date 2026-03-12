@@ -1,0 +1,52 @@
+# =========================
+# Backend / Node / NestJS
+# =========================
+backend/node_modules/
+backend/dist/
+backend/coverage/
+backend/.env
+backend/.env.*
+backend/*.log
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+
+# =========================
+# Flutter / Frontend
+# =========================
+frontend/.dart_tool/
+frontend/.packages
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/build/
+frontend/pubspec.lock
+
+# Android / iOS generated
+frontend/android/.gradle/
+frontend/android/frontend/build/
+frontend/ios/Pods/
+frontend/ios/.symlinks/
+frontend/ios/Flutter/Flutter.framework
+frontend/ios/Flutter/Flutter.podspec
+frontend/macos/Pods/
+
+# =========================
+# IDE / OS
+# =========================
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs / temp
+# =========================
+*.log
+*.tmp
+*.cache
+
+# =========================
+# Never track live DB runtime folder
+# =========================
+database/runtime/
