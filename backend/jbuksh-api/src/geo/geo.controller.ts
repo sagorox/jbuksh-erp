@@ -22,36 +22,43 @@ export class GeoController {
   constructor(private readonly geoService: GeoService) {}
 
   @Get('divisions')
-  divisions() {
-    return this.geoService.listDivisions();
+  async divisions() {
+    const items = await this.geoService.listDivisions();
+    return { ok: true, divisions: items };
   }
 
   @Get('districts')
-  districts(@Query('division_id') divisionId?: string) {
-    return this.geoService.listDistricts(
+  async districts(@Query('division_id') divisionId?: string) {
+    const items = await this.geoService.listDistricts(
       divisionId ? Number(divisionId) : undefined,
     );
+    return { ok: true, districts: items };
   }
 
   @Get('zones')
-  zones() {
-    return this.geoService.listZones();
+  async zones() {
+    const items = await this.geoService.listZones();
+    return { ok: true, zones: items };
   }
 
   @Get('areas')
-  areas(@Query('zone_id') zoneId?: string) {
-    return this.geoService.listAreas(zoneId ? Number(zoneId) : undefined);
+  async areas(@Query('zone_id') zoneId?: string) {
+    const items = await this.geoService.listAreas(
+      zoneId ? Number(zoneId) : undefined,
+    );
+    return { ok: true, areas: items };
   }
 
   @Get('territories')
-  territories(
+  async territories(
     @Query('area_id') areaId?: string,
     @Query('district_id') districtId?: string,
   ) {
-    return this.geoService.listTerritories(
+    const items = await this.geoService.listTerritories(
       areaId ? Number(areaId) : undefined,
       districtId ? Number(districtId) : undefined,
     );
+    return { ok: true, territories: items };
   }
 
   @Post('territories')

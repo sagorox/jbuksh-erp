@@ -26,6 +26,21 @@ export class UserEntity {
   @Column({ type: 'enum', enum: Role, default: Role.MPO })
   role: Role;
 
+  @Column({ type: 'bigint' })
+  division_id: number;
+
+  @Column({ type: 'bigint' })
+  district_id: number;
+
+  @Column({ type: 'bigint' })
+  zone_id: number;
+
+  @Column({ type: 'bigint' })
+  area_id: number;
+
+  @Column({ type: 'bigint' })
+  territory_id: number;
+
   @Column({ type: 'tinyint', default: 1 })
   is_active: number;
 
