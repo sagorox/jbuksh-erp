@@ -77,8 +77,9 @@ export class GeoController {
   }
 
   @Get('users/:userId/territories')
-  userTerritories(@Param('userId', ParseIntPipe) userId: number) {
-    return this.geoService.getUserTerritories(userId);
+  async userTerritories(@Param('userId', ParseIntPipe) userId: number) {
+    const items = await this.geoService.getUserTerritories(userId);
+    return { ok: true, territories: items };
   }
 
   @Post('users/:userId/territories')

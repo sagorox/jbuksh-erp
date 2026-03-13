@@ -129,11 +129,25 @@ export class UsersService {
       this.territoryRepo.findOne({ where: { id: territoryId } }),
     ]);
 
-    if (!division) throw new BadRequestException('Division not found');
-    if (!district) throw new BadRequestException('District not found');
-    if (!zone) throw new BadRequestException('Zone not found');
-    if (!area) throw new BadRequestException('Area not found');
-    if (!territory) throw new BadRequestException('Territory not found');
+    if (!division) {
+      throw new BadRequestException('Division not found');
+    }
+
+    if (!district) {
+      throw new BadRequestException('District not found');
+    }
+
+    if (!zone) {
+      throw new BadRequestException('Zone not found');
+    }
+
+    if (!area) {
+      throw new BadRequestException('Area not found');
+    }
+
+    if (!territory) {
+      throw new BadRequestException('Territory not found');
+    }
 
     if (Number(district.division_id) !== divisionId) {
       throw new BadRequestException(

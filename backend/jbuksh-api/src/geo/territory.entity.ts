@@ -5,6 +5,12 @@ export class TerritoryEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({ type: 'bigint' })
+  area_id: number;
+
+  @Column({ type: 'bigint' })
+  district_id: number;
+
   @Column({ type: 'varchar', length: 120 })
   name: string;
 

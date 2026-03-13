@@ -10,7 +10,7 @@ import 'offline_cache.dart';
 class Api {
   static const String _defaultBaseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'http://192.168.0.107:3000',
+    defaultValue: 'http://192.168.0.106:3000',
   );
 
   static String get baseUrl {
